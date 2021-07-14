@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "294706344721",
+    "project_id": "leagueconsultant-bef58",
+    "storage_bucket": "leagueconsultant-bef58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294706344721:android:699301ad5f0d2ab43812b0",
+        "android_client_info": {
+          "package_name": "com.lucas.leagueoflegendsconsult"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294706344721-knf1eeahr5si0hht4jc3ru31g7fh3jgg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCedBIdI5mEzZ51lkqL2apGidfHXsPBQ0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294706344721-knf1eeahr5si0hht4jc3ru31g7fh3jgg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
