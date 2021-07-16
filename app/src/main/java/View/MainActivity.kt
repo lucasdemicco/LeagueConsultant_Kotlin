@@ -16,22 +16,25 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    //Função que está passando de forma geral todos os FrameLayouts da Main XML
     private var Content: FrameLayout? = null
 
-    //Ativação de Leitura dos fragmentos passando através da ação WHEN
+    //Ativação de Leitura dos fragmentos passando através da ação WHEN -> ID
     private var mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
         when(item.itemId){
+
+            //Fragmento Inicio
             R.id.inicio ->{
                 val fragment = Home.newInstance()
                 addFragment(fragment)
             }
-
+            //Fragmento Pesquisar
             R.id.pesquisar ->{
                 val fragment = Pesquisar.newInstance()
                 addFragment(fragment)
             }
-
+            //Fragmento Estatísticas
             R.id.estatisticas ->{
                 val fragment = Estatisticas.newInstance()
                 addFragment(fragment)
@@ -55,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Passando para o onCreate os Fragments e ativando sua renderização
         Content = binding.content
         binding.bottomMenu.setOnNavigationItemSelectedListener (mOnNavigationItemSelectedListener)
 
