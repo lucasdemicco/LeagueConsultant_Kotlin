@@ -24,20 +24,30 @@ class MainActivity : AppCompatActivity() {
 
         when(item.itemId){
 
+            /* Identificado pelo ID
+                1- vai buscar a instanciação no Fragmento
+                2- variavel + fragmento + função
+                3- ex: (val fragment = Home.newInstance())
+                4 - e por fim retorna o Navigation Booleano para efeito de menu
+             */
+
             //Fragmento Inicio
             R.id.inicio ->{
                 val fragment = Home.newInstance()
                 addFragment(fragment)
+                return@OnNavigationItemSelectedListener true
             }
             //Fragmento Pesquisar
             R.id.pesquisar ->{
                 val fragment = Pesquisar.newInstance()
                 addFragment(fragment)
+                return@OnNavigationItemSelectedListener true
             }
             //Fragmento Estatísticas
             R.id.estatisticas ->{
                 val fragment = Estatisticas.newInstance()
                 addFragment(fragment)
+                return@OnNavigationItemSelectedListener true
             }
         }
         false
