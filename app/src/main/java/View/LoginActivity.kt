@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.lucas.leagueoflegendsconsult.R
@@ -20,6 +21,8 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar!!.hide()
+
+        verificarUsuarioLogado()
 
         binding.txtCadastrar.setOnClickListener {
             val intent = Intent(this, CadastroActivity::class.java)
@@ -57,10 +60,36 @@ class LoginActivity : AppCompatActivity() {
                 irMainActivity()
             }
         }.addOnFailureListener {
-            Toast.makeText(
-                this,
-                "Erro ao fazer login!",
-                Toast.LENGTH_SHORT).show()
+
+            val erro = it
+
+            when{
+                erro is FirebaseAuthInvalidCredentialsException -> Toast.makeText(
+                    this,
+                    "E-mail ou senha estão incorretos!",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                erro is FirebaseNetworkException -> Toast.makeText(
+                    this,
+                    "Sem conexão com a internet!",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                else -> Toast.makeText(
+                    this,
+                    "Erro ao logar usuário!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun verificarUsuarioLogado(){
+        val usuarioLogado = FirebaseAuth.getInstance().currentUser
+
+        if(usuarioLogado != null){
+            irMainActivity()
         }
     }
 

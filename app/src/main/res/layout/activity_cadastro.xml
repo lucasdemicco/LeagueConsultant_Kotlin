@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degrade_black"
     android:orientation="vertical"
     tools:context="View.LoginActivity">
 
@@ -37,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:text="Para se cadastrar é muito fácil, basta digitar seu e-mail e senha e começar a usar" />
 
@@ -45,42 +44,47 @@
         <EditText
             android:id="@+id/txtEmailCadastro"
             android:layout_width="match_parent"
+            android:padding="5dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="70dp"
             android:background="@drawable/corner"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/grey"
             android:ems="10"
             android:hint="Digite seu melhor e-mail"
+            android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
             android:inputType="textEmailAddress"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/txtSenhaCadastro"
+            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:background="@drawable/corner"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/grey"
             android:ems="10"
             android:hint="Digite sua senha"
             android:inputType="textPassword"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <Button
             android:id="@+id/btnCadastrar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
-            android:backgroundTint="@color/powderBlue"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/red"
             android:text="Confirmar cadastro"
-            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             app:cornerRadius="10dp" />
 
